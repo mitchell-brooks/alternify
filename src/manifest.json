@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Song Relinker",
+  "description": "Song Relinker finds streaming links and replaces them with universal links.",
+  "version": "0.0.1",
+  "action": {
+    "default_title": "Song Relinker",
+    "default_popup": "popup.html"
+  },
+	"background": {
+	  "service_worker":"background.ts"
+	  },
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+				"js": ["content-scripts/main.ts"]
+		}
+	],
+	"permissions": [
+		"activeTab"
+	],
+  "author": "Mitchell Brooks"
+}
+
