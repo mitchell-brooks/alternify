@@ -1,9 +1,10 @@
 {
-  "name": "song-relinker",
+  "name": "alternify-chrome-extension",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vite build --watch",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

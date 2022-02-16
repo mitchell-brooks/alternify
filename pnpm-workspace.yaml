@@ -1,0 +1,5 @@
+packages:
+  -'apps/extensions/chrome/**'
+  -'apps/site/**'
+  -'libs/**'
+  -'services/**'

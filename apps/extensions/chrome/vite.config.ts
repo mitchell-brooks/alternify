@@ -12,10 +12,15 @@ export default defineConfig({
     jsxInject: `import { h, Fragment } from 'preact'`,
   },
   root: 'src',
-  build: { outDir: resolve(__dirname, 'dist'), emptyOutDir: true },
+  build: {
+    outDir: resolve(__dirname, 'dist'),
+    emptyOutDir: true,
+    rollupOptions: { external: ['@styles'] },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
+      '@styles': resolve(__dirname, '../../../libs/styles'),
       react: 'preact/compat',
     },
   },

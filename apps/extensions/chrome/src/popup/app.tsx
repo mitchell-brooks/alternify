@@ -14,7 +14,15 @@ const StyledListItem = styled.li`
   list-style-type: none;
 `;
 
-const StyledLink = styled.a``;
+const StyledLink = styled.a`
+  color: var(--color-primary);
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color-accent);
+  }
+`;
 
 const StyledHeader = styled.h1``;
 
@@ -46,7 +54,11 @@ export function App() {
         <StyledList>
           {links.map((link, index: number) => (
             <StyledListItem key={`${index}${link.href}${link.text}`}>
-              <StyledLink href={link.href}>{link.href}</StyledLink>
+              <StyledLink
+                onClick={() => chrome.tabs.create({ url: link.href })}
+              >
+                {link.href}
+              </StyledLink>
             </StyledListItem>
           ))}
         </StyledList>
