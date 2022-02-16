@@ -1,11 +1,16 @@
-export type DOMMessage = {
-  type: 'GET_DOM',
-};
+export interface DOMMessage {
+  type: 'GET_DOM';
+}
 
-export type DOMMessageResponse = {
-  title: string,
-  headlines: string[],
-};
+export interface DOMMessageResponse {
+  title: string;
+  links: ILink[];
+}
+
+export interface ILink {
+  href: string;
+  text: string;
+}
 
 // Function called when a new message is received
 const messagesFromReactAppListener = (
@@ -15,14 +20,16 @@ const messagesFromReactAppListener = (
 ) => {
   console.log('[content.js]. Message received', msg);
 
-  const links = Array.from(document.getElementsByTagName < 'a' > 'a').map(
-    (a) => a.href
+  const links = Array.from(document.getElementsByTagName<'a'>('a')).map(
+    (a) => ({
+      href: a.href,
+      text: a.innerHTML,
+    })
   );
 
   // Prepare the response object with information about the site
   const response: DOMMessageResponse = {
     title: document.title,
-    headlines: links,
     links: links,
   };
 
