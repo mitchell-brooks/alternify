@@ -1,3 +1,5 @@
+import { getSpotifyInfo } from '../../../../../libs/spotify/spotify-api';
+
 export interface DOMMessage {
   type: 'GET_DOM';
 }
@@ -30,6 +32,7 @@ const messagesFromReactAppListener = (
 ) => {
   console.log('[content.js]. Message received', msg);
 
+  console.log(getSpotifyInfo({ link_type: 'test', uri: 'test' }));
   //  const anchors: IRelevantElementInfo[] = Array.from(
   //    document.getElementsByTagName<'a'>('a')
   //  ).map((a) => ({ link: a.href, text: a.textContent || a.innerText || null }));

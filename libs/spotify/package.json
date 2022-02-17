@@ -1,0 +1,14 @@
+{
+  "name": "alternify-libs-spotify",
+  "version": "0.0.1",
+  "description": "Spotify library for Alternify",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell Brooks <mitchell@lyda.me> (https://www.mitchellbrooks.io/)",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.18"
+  }
+}
