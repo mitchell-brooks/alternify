@@ -15,12 +15,13 @@ export default defineConfig({
   build: {
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
-    rollupOptions: { external: ['@styles'] },
+    rollupOptions: { external: ['@styles', '@constants'] },
   },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
       '@styles': resolve(__dirname, '../../../libs/styles'),
+      '@constants': resolve(__dirname, '../../../libs/constants'),
       react: 'preact/compat',
     },
   },

@@ -18,6 +18,7 @@
     "rootDir": ".",
     "paths": {
       "@styles": "libs/styles",
+      "@constants": "libs/constants",
       "@extensions/chrome": "apps/extensions/chrome"
     }
   }
